@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Name of yur theme -->
+  <title>Edgefield</title>
+
+  <meta itemprop="palette" content="palette-default" title="Default" data-preview="#ffffff,#222222">
+  <meta itemprop="palette" content="palette-custom" title="Custom" data-preview="custom">
+  <meta itemprop="palette" content="palette-transparent" title="Transparent" data-preview="transparent">
+
+  <!-- Add any styles your theme requires here -->
+  <link rel="stylesheet/less" type="text/css" href="/styles/main.less">
+  <meta itemprop="dummyImageCategory" content="Landscapes">
+  <meta itemprop="dummyContentLength" content="short">
+  <meta itemprop="defaultBackground" content="/images/bg.jpg" data-position="c" data-style="tile" data-color="#2b2a2a">
+  <!-- This script loads the Populr theming engine. Populr will automatically
+       remove it at runtime. -->
+  <script src="http://populr.me/assets/developers/themer.js"></script>
+  <!-- Add any javscript your theme requires here -->
+  <script src="/js/main.js"></script>
+</head>
+<body>
+  <!-- Put your theme's inside this script tag. The script tag will
+       prevent issues with quote escaping and invalid markup. -->
+  <script id="theme" type="text/x-handlebars-template">
+    <div id="top-border"></div>
+    <div id="header">
+      {{inline_logo_title}}
+    </div>
+    <div id="header-separator"></div>
+    {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="T-3|I-1|V-1|E-1|D-6|T-1"}}
+
+      {{#asset "text" size="1"}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{body}}}
+        </div>
+      {{/asset}}
+
+      {{#asset "imagegroup" size="1"}}
+        <div class="asset-content">
+          {{{imageslider images width=700 height=550 prevnext-enabled=false pager-enabled=true}}}
+        </div>
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+      {{/asset}}
+
+
+      {{#asset "documentgroup" size="1"}}
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+        <ul class="documents">
+        {{#each documents}}
+          <li><a href="{{{original_url}}}"><div class="title"><div class="extension extension-{{{extension}}}">{{{extension}}}</div>{{{title}}}</div></a></li>
+        {{/each}}
+        </ul>
+      {{/asset}}
+
+      {{#asset "embedgroup" size="1" width="700"}}
+        {{#if title_visible}}
+          <div class="asset-text">
+            {{{title}}}
+          </div>
+        {{/if}}
+        <div class="asset-content">
+          {{#each embeds}}
+            {{{html}}}
+          {{/each}}
+        </div>
+        {{#if description_visible}}
+          <div class="asset-text">
+            {{{description}}}
+          </div>
+        {{/if}}
+      {{/asset}}
+
+    {{/region}}
+
+    <div id="footer-separator"></div>
+    {{#region "columnizer" id="footer-region" max_cols="3" max_auto_assets="1" dummy_content="T-3|I-1|V-1|E-1|D-6|T-1"}}
+
+      {{#asset "text" size="1"}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{body}}}
+        </div>
+      {{/asset}}
+
+      {{#asset "imagegroup" size="1"}}
+        <div class="asset-content">
+          {{{imageslider images width=700 height=550 prevnext-enabled=false pager-enabled=true}}}
+        </div>
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+      {{/asset}}
+
+      {{#asset "documentgroup" size="1"}}
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+        <ul class="documents">
+        {{#each documents}}
+          <li><a href="{{{original_url}}}"><div class="title"><div class="extension extension-{{{extension}}}">{{{extension}}}</div>{{{title}}}</div></a></li>
+        {{/each}}
+        </ul>
+      {{/asset}}
+
+      {{#asset "embedgroup" size="1" width="700"}}
+        {{#if title_visible}}
+          <div class="asset-text">
+            {{{title}}}
+          </div>
+        {{/if}}
+        <div class="asset-content">
+          {{#each embeds}}
+            {{{html}}}
+          {{/each}}
+        </div>
+        {{#if description_visible}}
+          <div class="asset-text">
+            {{{description}}}
+          </div>
+        {{/if}}
+      {{/asset}}
+
+    {{/region}}
+
+    {{sharing}}
+    {{pop_links}}
+
+  </script>
+</body>
+</html>

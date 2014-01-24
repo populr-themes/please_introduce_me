@@ -1,0 +1,33 @@
+.text-color() {
+  color: #333;
+}
+.footer-text-color() {
+  .text-color();
+}
+
+.link-color() {
+  color: hsl(hue(@custom-color), saturation(@custom-color), lightness(#777));
+}
+.footer-link-color() {
+  .link-color();
+}
+
+.asset-background() {
+  background-color: #fff;
+  .box-shadow(0 0 5px rgba(0,0,0,0.6));
+}
+
+.extension-color() {
+  color: hsl(hue(@custom-color), saturation(@custom-color), lightness(#777));
+  background: transparent url("@{base-url}/images/document_icon.png") no-repeat;
+}
+
+.footer-extension-color() {
+  .extension-color();
+}
+
+@row-padding: 40px;
+
+@text-padding: 35px;
+
+@content-margin-bottom: 0;
